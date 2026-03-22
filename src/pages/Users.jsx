@@ -28,22 +28,3 @@ function Users (){
 }
 
 export default Users;
-
-// function Users (){
-//     const { id, name, email, username } = useParams();
-
-//     useEffect((id, name, email, username) => {
-//         fetch(`https://jsonplaceholder.typicode.com/users`);
-//     }, [id, name, email, username]);
-
-//     return(
-//         <>
-//             <h1>{id}</h1>
-//             <h1>{name}</h1>
-//             <h1>{email}</h1>
-//             <h1>{username}</h1>
-//         </>
-//     );
-// }
-
-// export default Users;
