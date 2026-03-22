@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Nav from "./components/Nav.jsx";
+import Users from "./pages/Users.jsx";
 
 function App() {
   return(
@@ -11,8 +12,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* unique value */}
+          <Route path="/users/:username" element={<Users />} />
         </Routes>
       </Router>
   );
