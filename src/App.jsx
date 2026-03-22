@@ -5,7 +5,7 @@ import Title from './components/Title.jsx'; // for Title.jsx
 import Modal from './components/Modal.jsx'; // for Modal.jsx
 import Counter from './components/Counter.jsx'; // for Counter.jsx
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, use } from 'react';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   function onTodoDelete(){
     setShowModal(true)
-    console.log('onTodoDelete()')
+    // console.log('onTodoDelete()')
   }
 
   function modalCancel(){
@@ -25,6 +25,19 @@ function App() {
     setShowModal(false)
     console.log('modalConfirm()')
   }
+
+  useEffect(() => {
+    console.log('ONLY on mount')
+  }, [])
+
+  useEffect(() => {
+    console.log('on mount AND on ${showModal} change')
+    // setShowModal(!showModal) // inf loop might break.... glitchy
+  }, [showModal])
+
+  useEffect(() => {
+    console.log('EVERY render')
+  })
 
   return (
     <div>
